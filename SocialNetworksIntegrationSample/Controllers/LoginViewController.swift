@@ -7,21 +7,24 @@
 //
 
 import UIKit
+import CoreMotion
+
 
 class LoginViewController: UIViewController {
     
     //MARK: class members
     let loginHandler: (String!, String?, NSError?) -> Void = {(socialNetwork: String!, accessToken: String?, error: NSError?) -> Void in
         if error != nil {
-            print(error)
+            println(error)
         } else {
             if accessToken != nil {
-                print(socialNetwork + " " + accessToken!)
+                println(socialNetwork + " " + accessToken!)
             } else {
-                print("access token is nil")
+                println("access token is nil")
             }
         }
     }
+    var gppSampleDelegate: GPPSampleDelegate?
     
     //MARK: lifecycle
     override func viewDidLoad() {
@@ -34,6 +37,9 @@ class LoginViewController: UIViewController {
         loginToFacebook(loginHandler)
     }
    
+    @IBAction func actionLoginGooglePlus(sender: UIButton) {
+        loginToGooglePlus(loginHandler)
+    }
     //MARK: facebook
     func loginToFacebook(loginHandlerBlock: (socialNetwork: String!, accessToken: String?, error: (NSError?)) -> ()) {
         let facebookReadPermissions = ["public_profile", "email"]
@@ -61,5 +67,46 @@ class LoginViewController: UIViewController {
             }
         })
     }
+    
+    //MARK: google+
+    func setupGooglePlus() -> GPPSignIn {
+        let googlePlusSignIn = GPPSignIn.sharedInstance()
+        gppSampleDelegate = GPPSampleDelegate(loginHandler: loginHandler)
+        googlePlusSignIn?.shouldFetchGooglePlusUser = true
+        googlePlusSignIn?.clientID = "676492270000-4m6j30fqa42egh9g87bcpp5pmcoqamcp.apps.googleusercontent.com"
+        googlePlusSignIn?.scopes = [kGTLAuthScopePlusLogin]
+        googlePlusSignIn?.delegate = gppSampleDelegate
+        return googlePlusSignIn
+    }
+    
+    func loginToGooglePlus(loginHandlerBlock: (socialNetwork: String!, accessToken: String?, error: (NSError?)) -> ()) {
+        let googlePlusSignIn = setupGooglePlus()
+        googlePlusSignIn.signOut()//for testing
+        googlePlusSignIn.authenticate()
+    }
+    
+    class GPPSampleDelegate: NSObject, GPPSignInDelegate {
+        var loginHandler: (String!, String?, NSError?) -> Void
+        
+        init (loginHandler: (String!, String?, NSError?) -> Void) {
+            self.loginHandler = loginHandler
+        }
+        
+        func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
+            if error == nil {
+                loginHandler("googleplus", auth.accessToken, nil)
+            } else {
+                loginHandler("googleplus", nil, error)
+            }
+        }
+        
+        func didDisconnectWithError(error: NSError!) {
+            loginHandler("googleplus", nil, error)
+        }
+        
+    }
+    
+    
 }
+
 

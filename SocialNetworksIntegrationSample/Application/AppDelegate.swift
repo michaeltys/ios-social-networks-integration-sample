@@ -29,8 +29,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let isFacebookURL = url.scheme != nil && url.scheme!.hasPrefix("fb\(FBSDKSettings.appID())") && url.host == "authorize"
         if isFacebookURL {
             return FBSDKApplicationDelegate.sharedInstance().application(application, openURL: url, sourceApplication: sourceApplication, annotation: annotation)
+        } else {
+            //currently
+            return GPPURLHandler.handleURL(url, sourceApplication: sourceApplication, annotation: annotation)
         }
-        return false
     }
 
     func applicationWillResignActive(application: UIApplication) {
