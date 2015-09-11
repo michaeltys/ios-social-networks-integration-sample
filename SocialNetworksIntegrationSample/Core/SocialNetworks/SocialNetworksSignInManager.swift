@@ -7,7 +7,13 @@
 //
 
 import Foundation
+import TwitterKit
+
 class SocialNetworksSignInManager {
+    static let socialNetworkFacebook = "facebook"
+    static let socialNetworkGooglePlus = "googlePlus"
+    static let socialNetworkTwitter = "twitter"
+    static let socialNetworkLinkedIn = "linkedIn"
     
     static func loginToFacebook(loginHandlerBlock: (socialNetwork: String!, accessToken: String?, error: (NSError?)) -> ()) {
         let facebookReadPermissions = ["public_profile", "email"]
@@ -23,15 +29,15 @@ class SocialNetworksSignInManager {
                 
                 // Process error
                 FBSDKLoginManager().logOut()
-                loginHandlerBlock(socialNetwork: "facebook", accessToken: nil, error: error)
+                loginHandlerBlock(socialNetwork: SocialNetworksSignInManager.socialNetworkFacebook, accessToken: nil, error: error)
             } else if result.isCancelled {
                 // Handle cancellations
                 FBSDKLoginManager().logOut()
-                loginHandlerBlock(socialNetwork: "facebook", accessToken: nil, error: nil)
+                loginHandlerBlock(socialNetwork: SocialNetworksSignInManager.socialNetworkFacebook, accessToken: nil, error: nil)
             } else {
                 let fbToken = result.token.tokenString
                 let fbUserID = result.token.userID
-                loginHandlerBlock(socialNetwork: "facebook", accessToken: fbToken, error: error)
+                loginHandlerBlock(socialNetwork: SocialNetworksSignInManager.socialNetworkFacebook, accessToken: fbToken, error: error)
             }
         })
     }
@@ -40,6 +46,16 @@ class SocialNetworksSignInManager {
         let googlePlusSignIn = setupGooglePlus(gppSignInDelegate)
         googlePlusSignIn.signOut()//for testing
         googlePlusSignIn.authenticate()
+    }
+    
+    static func loginToTwitter(loginHandlerBlock: (socialNetwork: String!, accessToken: String?, error: (NSError?))-> ()) {
+        Twitter.sharedInstance().logInWithCompletion { session, error in
+            if session != nil {
+                loginHandlerBlock(socialNetwork: SocialNetworksSignInManager.socialNetworkTwitter, accessToken: session!.authToken, error: nil)
+            } else {
+                loginHandlerBlock(socialNetwork: SocialNetworksSignInManager.socialNetworkTwitter, accessToken: nil, error: error)
+            }
+        }
     }
     
     private static func setupGooglePlus(gppSignInDelegate: GPPSignInDelegate) -> GPPSignIn {

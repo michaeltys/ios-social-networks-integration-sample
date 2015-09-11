@@ -42,6 +42,9 @@ class LoginViewController: UIViewController {
         SocialNetworksSignInManager.loginToGooglePlus(gppSampleDelegate!)
     }
     
+    @IBAction func actionLoginTwitter(sender: UIButton) {
+        SocialNetworksSignInManager.loginToTwitter(loginHandler)
+    }
 }
 
 

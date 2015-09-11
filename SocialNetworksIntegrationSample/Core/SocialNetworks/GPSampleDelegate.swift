@@ -17,14 +17,14 @@ class GPSampleDelegate: NSObject, GPPSignInDelegate {
     
     func finishedWithAuth(auth: GTMOAuth2Authentication!, error: NSError!) {
         if error == nil {
-            loginHandler("googleplus", auth.accessToken, nil)
+            loginHandler(SocialNetworksSignInManager.socialNetworkGooglePlus, auth.accessToken, nil)
         } else {
-            loginHandler("googleplus", nil, error)
+            loginHandler(SocialNetworksSignInManager.socialNetworkGooglePlus, nil, error)
         }
     }
     
     func didDisconnectWithError(error: NSError!) {
-        loginHandler("googleplus", nil, error)
+        loginHandler(SocialNetworksSignInManager.socialNetworkGooglePlus, nil, error)
     }
     
 }
