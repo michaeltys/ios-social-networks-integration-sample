@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5E1C45651BA2C36C002CF0DC /* SocialNetworksSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C45641BA2C36C002CF0DC /* SocialNetworksSignInManager.swift */; };
+		5E1C45671BA2C758002CF0DC /* GPSampleDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1C45661BA2C758002CF0DC /* GPSampleDelegate.swift */; };
 		5E72B0121B9F419D0010F54B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72B0111B9F419D0010F54B /* AppDelegate.swift */; };
 		5E72B02F1B9F42600010F54B /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72B0181B9F42600010F54B /* Global.swift */; };
 		5E72B0301B9F42600010F54B /* CustomURLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E72B01A1B9F42600010F54B /* CustomURLManager.swift */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5E1C45641BA2C36C002CF0DC /* SocialNetworksSignInManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocialNetworksSignInManager.swift; sourceTree = "<group>"; };
+		5E1C45661BA2C758002CF0DC /* GPSampleDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GPSampleDelegate.swift; sourceTree = "<group>"; };
 		5E72B0111B9F419D0010F54B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E72B0181B9F42600010F54B /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
 		5E72B01A1B9F42600010F54B /* CustomURLManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomURLManager.swift; sourceTree = "<group>"; };
@@ -108,6 +112,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5E1C45631BA2C349002CF0DC /* SocialNetworks */ = {
+			isa = PBXGroup;
+			children = (
+				5E1C45641BA2C36C002CF0DC /* SocialNetworksSignInManager.swift */,
+				5E1C45661BA2C758002CF0DC /* GPSampleDelegate.swift */,
+			);
+			path = SocialNetworks;
+			sourceTree = "<group>";
+		};
 		5E72B0101B9F419D0010F54B /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +141,7 @@
 		5E72B0171B9F42600010F54B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				5E1C45631BA2C349002CF0DC /* SocialNetworks */,
 				5E72B0181B9F42600010F54B /* Global.swift */,
 				5E72B0191B9F42600010F54B /* Network */,
 			);
@@ -392,8 +406,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5E72B0121B9F419D0010F54B /* AppDelegate.swift in Sources */,
+				5E1C45651BA2C36C002CF0DC /* SocialNetworksSignInManager.swift in Sources */,
 				5E72B0321B9F42600010F54B /* RequestManager.swift in Sources */,
 				5E72B02F1B9F42600010F54B /* Global.swift in Sources */,
+				5E1C45671BA2C758002CF0DC /* GPSampleDelegate.swift in Sources */,
 				5E72B0301B9F42600010F54B /* CustomURLManager.swift in Sources */,
 				5E72B03B1B9F42A30010F54B /* LoginViewController.swift in Sources */,
 				5E72B0351B9F42600010F54B /* User+Info.swift in Sources */,
