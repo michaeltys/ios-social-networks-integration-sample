@@ -45,6 +45,13 @@ class LoginViewController: UIViewController {
     @IBAction func actionLoginTwitter(sender: UIButton) {
         SocialNetworksSignInManager.loginToTwitter(loginHandler)
     }
+    
+    @IBAction func actionLoginToLinkedIn(sender: UIButton) {
+        let linkedInLoginView = OAuthLoginView()
+        linkedInLoginView.view.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+//        navigationController?.
+            presentViewController(linkedInLoginView, animated: false, completion: nil)
+    }
 }
 
 

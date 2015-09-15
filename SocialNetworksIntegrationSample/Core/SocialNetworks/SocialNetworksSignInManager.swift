@@ -58,6 +58,10 @@ class SocialNetworksSignInManager {
         }
     }
     
+    static func loginToLinkedIn() {
+        
+    }
+    
     private static func setupGooglePlus(gppSignInDelegate: GPPSignInDelegate) -> GPPSignIn {
         let googlePlusSignIn = GPPSignIn.sharedInstance()
         googlePlusSignIn?.shouldFetchGooglePlusUser = true

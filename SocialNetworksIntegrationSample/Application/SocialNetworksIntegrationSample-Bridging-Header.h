@@ -13,5 +13,6 @@
 #import <FBSDKLoginKit/FBSDKLoginKit.h>
 #import <GooglePlus/GooglePlus.h>
 #import <GoogleOpenSource/GoogleOpenSource.h>
+#import "OAuthLoginView.h"
 
 #endif
