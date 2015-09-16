@@ -26,27 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialNetworksIntegrationSample/Frameworks/LinkedInOAuthStarterKit/OAuthStarterKit/OAuthLoginView.m"
-            timestampString = "463919322.679909"
+            timestampString = "464093948.293732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146"
-            landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialNetworksIntegrationSample/Frameworks/LinkedInOAuthStarterKit/OAuthStarterKit/OAuthLoginView.m"
-            timestampString = "463919322.679909"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "234"
-            endingLineNumber = "234"
+            startingLineNumber = "245"
+            endingLineNumber = "245"
             landmarkName = "-testApiCallResult:didFinish:"
             landmarkType = "5">
          </BreakpointContent>
@@ -90,76 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SocialNetworksIntegrationSample/Frameworks/LinkedInOAuthStarterKit/OAuthStarterKit/OAuthLoginView.m"
-            timestampString = "463923867.212138"
+            timestampString = "464093948.293732"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
-            landmarkName = "-requestTokenFromProvider"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialNetworksIntegrationSample/Frameworks/LinkedInOAuthStarterKit/OAuthStarterKit/OAuthLoginView.m"
-            timestampString = "463923869.574223"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "-requestTokenResult:didFinish:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialNetworksIntegrationSample/Frameworks/LinkedInOAuthStarterKit/OAuthStarterKit/OAuthLoginView.m"
-            timestampString = "463923878.884779"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-allowUserToLogin"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialNetworksIntegrationSample/Frameworks/LinkedInOAuthStarterKit/OAuthStarterKit/OAuthLoginView.m"
-            timestampString = "463923887.756876"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-webView:shouldStartLoadWithRequest:navigationType:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SocialNetworksIntegrationSample/Frameworks/LinkedInOAuthStarterKit/OAuthStarterKit/OAuthLoginView.m"
-            timestampString = "463925335.512523"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "-accessTokenFromProvider"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "-testApiCallResult:didFinish:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

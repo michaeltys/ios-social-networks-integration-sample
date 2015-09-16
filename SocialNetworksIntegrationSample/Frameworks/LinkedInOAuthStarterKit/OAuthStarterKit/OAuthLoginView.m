@@ -19,7 +19,7 @@
 //
 @implementation OAuthLoginView
 
-@synthesize requestToken, accessToken, profile;
+@synthesize requestToken, accessToken, profile, loginHandlerBlock;
 
 //
 // OAuth step 1a:
@@ -188,13 +188,23 @@
     {
         NSLog(@"Request access token failed.");
         NSLog(@"%@",responseBody);
+        NSError *error = [[NSError alloc] initWithDomain:@"LinkedInAuthError" code:errno userInfo:nil];
+        loginHandlerBlock(@"linkedIn", nil, error);
     }
     else
     {
         self.accessToken = [[OAToken alloc] initWithHTTPResponseBody:responseBody];
-        [self testApiCall];
+        loginHandlerBlock(@"linkedIn", self.accessToken.key, nil);
     }
     [responseBody release];
+    [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)accessTokenResult:(OAServiceTicket *)ticket didFail:(NSData *)data
+{
+    NSError *error = [[NSError alloc] initWithDomain:@"LinkedInAuthError" code:errno userInfo:nil];
+    loginHandlerBlock(@"linkedIn", nil, error);
+    [self dismissModalViewControllerAnimated:YES];
 }
 
 - (void)testApiCall

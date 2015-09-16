@@ -58,8 +58,11 @@ class SocialNetworksSignInManager {
         }
     }
     
-    static func loginToLinkedIn() {
-        
+    static func loginToLinkedIn(viewcontroller: UIViewController!, loginHandlerBlock: (socialNetwork: String!, accessToken: String?, error: (NSError?))-> ()) {
+        let linkedInLoginView = OAuthLoginView()
+        linkedInLoginView.loginHandlerBlock = loginHandlerBlock
+        linkedInLoginView.view.frame = CGRectMake(0, 0, viewcontroller.view.frame.size.width, viewcontroller.view.frame.size.height);
+        viewcontroller.presentViewController(linkedInLoginView, animated: false, completion: nil)
     }
     
     private static func setupGooglePlus(gppSignInDelegate: GPPSignInDelegate) -> GPPSignIn {

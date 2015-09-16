@@ -41,6 +41,7 @@
 @property(nonatomic, retain) OAToken *requestToken;
 @property(nonatomic, retain) OAToken *accessToken;
 @property(nonatomic, retain) NSDictionary *profile;
+@property(nonatomic, copy) void (^loginHandlerBlock)(NSString* socialNetwork, NSString* accessToken, NSError* error);
 
 - (void)initLinkedInApi;
 - (void)requestTokenFromProvider;
