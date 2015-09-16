@@ -16,3 +16,9 @@ https://docs.fabric.io/ios/twitter/authentication.html#log-in-with-twitter
 It is very easy to integrate Twitter using Fabric.app:
 
 https://docs.fabric.io/ios/fabric/getting-started.html
+
+For LinkedIn integration:
+
+http://www.innofied.com/linkedin-integration-in-ios-apps/
+https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/BuildingCocoaApps/MixandMatch.html
+
